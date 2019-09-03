@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:flutter_firebase_login/login/login.dart';
-import 'package:flutter_firebase_login/user_repository.dart';
-import 'package:flutter_firebase_login/validators.dart';
+import 'package:ecodrive/login/login.dart';
+import 'package:ecodrive/user_repository.dart';
+import 'package:ecodrive/validators.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   UserRepository _userRepository;
