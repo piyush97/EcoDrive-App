@@ -72,9 +72,9 @@ packages:
   flutter_bloc:
     dependency: "direct main"
     description:
-      path: "../../packages/flutter_bloc"
-      relative: true
-    source: path
+      name: flutter_bloc
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.21.0"
   flutter_test:
     dependency: "direct dev"
