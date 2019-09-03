@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "60893697537",
+    "firebase_url": "https://bay-max-5311c.firebaseio.com",
+    "project_id": "bay-max-5311c",
+    "storage_bucket": "bay-max-5311c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60893697537:android:a6d32d22aa16de77",
+        "android_client_info": {
+          "package_name": "com.ecodrive.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60893697537-bvlcc8otp90sm2hvu4kj4s3fk14musdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyWEJ6Z72da024_NF7kgLK5dtBdzB2Xyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60893697537-eh6h726p81t1tvv2prtmsl8o6qov6seq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
