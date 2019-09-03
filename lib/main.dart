@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_firebase_login/authentication_bloc/bloc.dart';
-import 'package:flutter_firebase_login/user_repository.dart';
-import 'package:flutter_firebase_login/home_screen.dart';
-import 'package:flutter_firebase_login/login/login.dart';
-import 'package:flutter_firebase_login/splash_screen.dart';
-import 'package:flutter_firebase_login/simple_bloc_delegate.dart';
+import 'package:ecodrive/authentication_bloc/bloc.dart';
+import 'package:ecodrive/user_repository.dart';
+import 'package:ecodrive/home_screen.dart';
+import 'package:ecodrive/login/login.dart';
+import 'package:ecodrive/splash_screen.dart';
+import 'package:ecodrive/simple_bloc_delegate.dart';
 
 void main() {
   BlocSupervisor.delegate = SimpleBlocDelegate();
@@ -31,6 +31,13 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: Colors.pink[300],
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
         builder: (context, state) {
           if (state is Unauthenticated) {

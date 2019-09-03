@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_firebase_login/user_repository.dart';
-import 'package:flutter_firebase_login/authentication_bloc/bloc.dart';
-import 'package:flutter_firebase_login/login/login.dart';
+import 'package:ecodrive/user_repository.dart';
+import 'package:ecodrive/authentication_bloc/bloc.dart';
+import 'package:ecodrive/login/login.dart';
 
 class LoginForm extends StatefulWidget {
   final UserRepository _userRepository;
