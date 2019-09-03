@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_firebase_login/login/login.dart';
+import 'package:ecodrive/login/login.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GoogleLoginButton extends StatelessWidget {
@@ -17,7 +17,7 @@ class GoogleLoginButton extends StatelessWidget {
         );
       },
       label: Text('Sign in with Google', style: TextStyle(color: Colors.white)),
-      color: Colors.redAccent,
+      color: Colors.pink[300],
     );
   }
 }
