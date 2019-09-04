@@ -23,36 +23,34 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Center(
-            child: Card(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const ListTile(
-                    title: Text('Bike 1'),
-                    subtitle: Text('Available for 2 days for Rs. 5,000 '),
-                  ),
-                  ButtonTheme.bar(
-                    // make buttons use the appropriate styles for cards
-                    child: ButtonBar(
-                      children: <Widget>[
-                        FlatButton(
-                          child: const Text(
-                            'Rent',
-                          ),
-                          onPressed: () {/* ... */},
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+              color: Colors.red,
             ),
-          ),
-        ],
+            Container(
+              width: 160.0,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 160.0,
+              color: Colors.green,
+            ),
+            Container(
+              width: 160.0,
+              color: Colors.yellow,
+            ),
+            Container(
+              width: 160.0,
+              color: Colors.orange,
+            ),
+          ],
+        ),
       ),
     );
   }
