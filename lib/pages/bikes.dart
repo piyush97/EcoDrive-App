@@ -17,6 +17,19 @@ class _EnergyCardPageState extends State<EnergyCardPage> {
           ),
           backgroundColor: Colors.pink,
         ),
+        drawer: new Drawer(
+          child: ListView(
+            children: <Widget>[
+              new UserAccountsDrawerHeader(
+                accountName: new Text('Piyuh Mehta'),
+                accountEmail: new Text('testemail@test.com'),
+                currentAccountPicture: new CircleAvatar(
+                  backgroundImage: new NetworkImage('http://i.pravatar.cc/400'),
+                ),
+              ),
+            ],
+          ),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GridView.count(
