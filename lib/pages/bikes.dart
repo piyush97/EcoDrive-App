@@ -51,7 +51,6 @@ class _EnergyCardPageState extends State<EnergyCardPage> {
       body: GeneralCard(
         title: "Bike",
         date: "Available for 2 days",
-        kw: 4900,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
