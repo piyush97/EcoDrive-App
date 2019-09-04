@@ -76,6 +76,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }) async* {
     yield LoginState.loading();
     try {
+      print("hamara email"+ email);
       await _userRepository.signInWithCredentials(email, password);
       yield LoginState.success();
     } catch (_) {

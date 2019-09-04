@@ -88,26 +88,27 @@ class _LoginFormState extends State<LoginForm> {
                   TextFormField(
                     controller: _emailController,
                     decoration: InputDecoration(
-                      icon: Icon(Icons.email),
-                      labelText: 'Email',
+                      icon: Icon(Icons.phone),
+                      labelText: 'Phone',
+                      prefix: Text("+91")
                     ),
                     autovalidate: true,
                     autocorrect: false,
                     validator: (_) {
-                      return !state.isEmailValid ? 'Invalid Email' : null;
+                      return !state.isEmailValid ? 'Invalid Number' : null;
                     },
                   ),
                   TextFormField(
                     controller: _passwordController,
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock),
-                      labelText: 'Password',
+                      labelText: 'OTP',
                     ),
                     obscureText: true,
                     autovalidate: true,
                     autocorrect: false,
                     validator: (_) {
-                      return !state.isPasswordValid ? 'Invalid Password' : null;
+                      return !state.isPasswordValid ? 'Invalid OTP' : null;
                     },
                   ),
                   Padding(
@@ -115,6 +116,7 @@ class _LoginFormState extends State<LoginForm> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
+                    new FlatButton(onPressed:(){sendcode(_emailController.text);},child: Text("Send OTP"),),
                         LoginButton(
                           onPressed: isLoginButtonEnabled(state)
                               ? _onFormSubmitted
@@ -132,6 +134,12 @@ class _LoginFormState extends State<LoginForm> {
         },
       ),
     );
+  }
+
+
+  void sendcode(number){
+    _userRepository.sendCodeToPhoneNumber(number);
+
   }
 
   @override
