@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "../widgets/general_card.dart";
 import "../main.dart";
+import "../pages/plans.dart";
 
 class EnergyCardPage extends StatefulWidget {
   @override
@@ -55,6 +56,14 @@ class _EnergyCardPageState extends State<EnergyCardPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
+          Navigator.push(
+              context,
+              MaterialPageRoute<Null>(
+                builder: (BuildContext context) {
+                  return PlansPage();
+                },
+                fullscreenDialog: true,
+              ));
         },
         child: Text("Rent"),
         backgroundColor: Colors.pink,
