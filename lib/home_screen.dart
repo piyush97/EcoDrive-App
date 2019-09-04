@@ -26,7 +26,32 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Center(child: Text('Welcome $name!')),
+          Center(
+            child: Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const ListTile(
+                    title: Text('Bike 1'),
+                    subtitle: Text('Available for 2 days for Rs. 5,000 '),
+                  ),
+                  ButtonTheme.bar(
+                    // make buttons use the appropriate styles for cards
+                    child: ButtonBar(
+                      children: <Widget>[
+                        FlatButton(
+                          child: const Text(
+                            'Rent',
+                          ),
+                          onPressed: () {/* ... */},
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
