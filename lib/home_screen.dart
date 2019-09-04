@@ -26,97 +26,74 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         child: ListView(
           children: <Widget>[
-            Card(
-              child: InkWell(
-                splashColor: Colors.pink.withAlpha(30),
-                onTap: () {
-                  print('Card tapped.');
-                },
-                child: Container(
-                  width: 300,
-                  height: 100,
-                  child: Text('A card that can be tapped'),
-                ),
+            Center(
+              child: Text(
+                "BiCycle 1",
               ),
             ),
-            Card(
-              child: InkWell(
-                splashColor: Colors.pink.withAlpha(30),
-                onTap: () {
-                  print('Card tapped.');
-                },
-                child: Container(
-                  width: 300,
-                  height: 100,
-                  child: Text('A card that can be tapped'),
-                ),
+            new Image.network(
+                'https://cdn.yankodesign.com/images/design_news/2010/11/10/ecodrive_cycle2.jpg '),
+            new Padding(
+              padding: new EdgeInsets.all(7.0),
+              child: new Row(
+                children: <Widget>[
+                  new Padding(
+                    padding: new EdgeInsets.all(7.0),
+                    child: new Icon(Icons.card_travel),
+                  ),
+                  new Padding(
+                    padding: new EdgeInsets.all(7.0),
+                    child: new Text(
+                      'Rent',
+                      style: new TextStyle(fontSize: 18.0),
+                    ),
+                  ),
+                  new Padding(
+                    padding: new EdgeInsets.all(7.0),
+                    child: new Icon(Icons.comment),
+                  ),
+                  new Padding(
+                    padding: new EdgeInsets.all(7.0),
+                    child: new Text('Comments',
+                        style: new TextStyle(fontSize: 18.0)),
+                  )
+                ],
               ),
             ),
-            Card(
-              child: InkWell(
-                splashColor: Colors.pink.withAlpha(30),
-                onTap: () {
-                  print('Card tapped.');
-                },
-                child: Container(
-                  width: 300,
-                  height: 100,
-                  child: Text('A card that can be tapped'),
-                ),
+            Center(
+              child: Text(
+                "BiCycle 2",
               ),
             ),
-            Card(
-              child: InkWell(
-                splashColor: Colors.pink.withAlpha(30),
-                onTap: () {
-                  print('Card tapped.');
-                },
-                child: Container(
-                  width: 300,
-                  height: 100,
-                  child: Text('A card that can be tapped'),
-                ),
+            new Image.network(
+                'https://cdn.yankodesign.com/images/design_news/2010/11/10/ecodrive_cycle2.jpg '),
+            new Padding(
+              padding: new EdgeInsets.all(7.0),
+              child: new Row(
+                children: <Widget>[
+                  new Padding(
+                    padding: new EdgeInsets.all(7.0),
+                    child: new Icon(Icons.card_travel),
+                  ),
+                  new Padding(
+                    padding: new EdgeInsets.all(7.0),
+                    child: new Text(
+                      'Rent',
+                      style: new TextStyle(fontSize: 18.0),
+                    ),
+                  ),
+                  new Padding(
+                    padding: new EdgeInsets.all(7.0),
+                    child: new Icon(Icons.comment),
+                  ),
+                  new Padding(
+                    padding: new EdgeInsets.all(7.0),
+                    child: new Text('Comments',
+                        style: new TextStyle(fontSize: 18.0)),
+                  )
+                ],
               ),
-            ),
-            Card(
-              child: InkWell(
-                splashColor: Colors.pink.withAlpha(30),
-                onTap: () {
-                  print('Card tapped.');
-                },
-                child: Container(
-                  width: 300,
-                  height: 100,
-                  child: Text('A card that can be tapped'),
-                ),
-              ),
-            ),
-            Card(
-              child: InkWell(
-                splashColor: Colors.pink.withAlpha(30),
-                onTap: () {
-                  print('Card tapped.');
-                },
-                child: Container(
-                  width: 300,
-                  height: 100,
-                  child: Text('A card that can be tapped'),
-                ),
-              ),
-            ),
-            Card(
-              child: InkWell(
-                splashColor: Colors.pink.withAlpha(30),
-                onTap: () {
-                  print('Card tapped.');
-                },
-                child: Container(
-                  width: 300,
-                  height: 100,
-                  child: Text('A card that can be tapped'),
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),
