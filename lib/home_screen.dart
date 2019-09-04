@@ -24,30 +24,98 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Container(
-        height: MediaQuery.of(context).size.height,
         child: ListView(
-          scrollDirection: Axis.horizontal,
           children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width / 2,
-              margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-              color: Colors.red,
+            Card(
+              child: InkWell(
+                splashColor: Colors.pink.withAlpha(30),
+                onTap: () {
+                  print('Card tapped.');
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  child: Text('A card that can be tapped'),
+                ),
+              ),
             ),
-            Container(
-              width: 160.0,
-              color: Colors.blue,
+            Card(
+              child: InkWell(
+                splashColor: Colors.pink.withAlpha(30),
+                onTap: () {
+                  print('Card tapped.');
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  child: Text('A card that can be tapped'),
+                ),
+              ),
             ),
-            Container(
-              width: 160.0,
-              color: Colors.green,
+            Card(
+              child: InkWell(
+                splashColor: Colors.pink.withAlpha(30),
+                onTap: () {
+                  print('Card tapped.');
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  child: Text('A card that can be tapped'),
+                ),
+              ),
             ),
-            Container(
-              width: 160.0,
-              color: Colors.yellow,
+            Card(
+              child: InkWell(
+                splashColor: Colors.pink.withAlpha(30),
+                onTap: () {
+                  print('Card tapped.');
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  child: Text('A card that can be tapped'),
+                ),
+              ),
             ),
-            Container(
-              width: 160.0,
-              color: Colors.orange,
+            Card(
+              child: InkWell(
+                splashColor: Colors.pink.withAlpha(30),
+                onTap: () {
+                  print('Card tapped.');
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  child: Text('A card that can be tapped'),
+                ),
+              ),
+            ),
+            Card(
+              child: InkWell(
+                splashColor: Colors.pink.withAlpha(30),
+                onTap: () {
+                  print('Card tapped.');
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  child: Text('A card that can be tapped'),
+                ),
+              ),
+            ),
+            Card(
+              child: InkWell(
+                splashColor: Colors.pink.withAlpha(30),
+                onTap: () {
+                  print('Card tapped.');
+                },
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  child: Text('A card that can be tapped'),
+                ),
+              ),
             ),
           ],
         ),
