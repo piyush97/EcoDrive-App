@@ -160,6 +160,7 @@ class _GeneralCardState extends State<GeneralCard> {
                       child: FloatingActionButton(
                         child: Text("Rent"),
                         backgroundColor: Colors.deepOrange,
+                        onPressed: () => print("pressed"),
                       )))
             ],
           ),
