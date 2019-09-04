@@ -3,12 +3,12 @@ import "../widgets/general_card.dart";
 import "../main.dart";
 import "../pages/plans.dart";
 
-class EnergyCardPage extends StatefulWidget {
+class BikesPage extends StatefulWidget {
   @override
-  _EnergyCardPageState createState() => new _EnergyCardPageState();
+  _BikesPageState createState() => new _BikesPageState();
 }
 
-class _EnergyCardPageState extends State<EnergyCardPage> {
+class _BikesPageState extends State<BikesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
