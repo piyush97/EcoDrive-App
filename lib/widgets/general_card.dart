@@ -18,8 +18,9 @@ class _GeneralCardState extends State<GeneralCard> {
     return Stack(
       children: <Widget>[
         Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          elevation: 2,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          elevation: 7,
           child: Stack(
             children: <Widget>[
               Column(
@@ -28,7 +29,10 @@ class _GeneralCardState extends State<GeneralCard> {
                     flex: 2,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xFFCF2156),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                              "https://lightspeed.bike/wp-content/uploads/2017/07/8-3.png"),
+                        ),
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(8),
                           topRight: Radius.circular(8),
@@ -66,9 +70,9 @@ class _GeneralCardState extends State<GeneralCard> {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: <Widget>[
                                 Text(
-                                  " Rs",
+                                  "Rs ",
                                   style: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 19,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
@@ -147,13 +151,16 @@ class _GeneralCardState extends State<GeneralCard> {
                 ),
               ),
               Positioned(
-                left: 0,
-                right: -110,
-                bottom: 18,
-                child: AnimatedFab(
-                  onClick: () => print("clicked"),
-                ),
-              )
+                  left: 0,
+                  right: -110,
+                  bottom: 18,
+                  child: SizedBox(
+                      width: 40.0,
+                      height: 40.0,
+                      child: FloatingActionButton(
+                        child: Text("Rent"),
+                        backgroundColor: Colors.deepOrange,
+                      )))
             ],
           ),
         ),
