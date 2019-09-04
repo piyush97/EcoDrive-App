@@ -33,9 +33,9 @@ class PlansPageState extends State<PlansPage> {
             showFooter: false,
             bodyGradient: LinearGradient(
               colors: [
-                Colors.pink.withOpacity(1),
-                Colors.pink[400],
-                Colors.pink[800],
+                Colors.blue.withOpacity(1),
+                Colors.blue[400],
+                Colors.blue[800],
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
@@ -128,9 +128,9 @@ class PlansPageState extends State<PlansPage> {
             showFooter: false,
             bodyGradient: LinearGradient(
               colors: [
-                Colors.pink.withOpacity(1),
-                Colors.pink[400],
-                Colors.pink[800],
+                Colors.green.withOpacity(1),
+                Colors.green[400],
+                Colors.green[800],
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
@@ -223,9 +223,9 @@ class PlansPageState extends State<PlansPage> {
             showFooter: false,
             bodyGradient: LinearGradient(
               colors: [
-                Colors.pink.withOpacity(1),
-                Colors.pink[400],
-                Colors.pink[800],
+                Colors.red.withOpacity(1),
+                Colors.red[400],
+                Colors.red[800],
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
