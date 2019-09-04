@@ -15,6 +15,10 @@ allprojects {
         google()
         jcenter()
     }
+
+    configurations.all {
+        resolutionStrategy.force "com.android.support:support-v4:26.1.0"
+    }
 }
 
 // This block encapsulates custom properties and makes them available to all
@@ -24,7 +28,7 @@ ext {
     compileSdkVersion = 28
     // You can also use this to specify versions for dependencies. Having consistent
     // versions between modules can avoid behavior conflicts.
-    supportLibVersion = '1.0.0-beta01'
+    //supportLibVersion = '1.0.0-beta01'
 }
 
 rootProject.buildDir = '../build'
