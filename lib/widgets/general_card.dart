@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import "animated_fab.dart";
 import "energy_clipper.dart";
 
 class GeneralCard extends StatefulWidget {
@@ -56,13 +55,6 @@ class _GeneralCardState extends State<GeneralCard> {
                           SizedBox(
                             height: 20,
                           ),
-                          Text(
-                            "Max speed 45Kmph",
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 10,
-                            ),
-                          ),
                           Padding(
                             padding: const EdgeInsets.only(left: 20.0, top: 5),
                             child: Row(
@@ -70,13 +62,7 @@ class _GeneralCardState extends State<GeneralCard> {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: <Widget>[
                                 Text(
-                                  "Rs ",
-                                  style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  "${widget.kw}",
+                                  "Ecodrive FlagShip",
                                   style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
