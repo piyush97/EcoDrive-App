@@ -45,12 +45,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
   void _loginButton() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => EnergyCardPage()),
+      MaterialPageRoute(builder: (context) => BikesPage()),
     );
   }
 
