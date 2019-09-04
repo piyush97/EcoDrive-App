@@ -29,6 +29,12 @@ class _EnergyCardPageState extends State<EnergyCardPage> {
               ),
             ),
             new ListTile(
+              title: new Text('Your Rides'),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            new ListTile(
               title: new Text('Log Out'),
               onTap: () {
                 Navigator.of(context).pop();
@@ -41,42 +47,16 @@ class _EnergyCardPageState extends State<EnergyCardPage> {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.count(
-          childAspectRatio: 0.7,
-          crossAxisCount: 2,
-          crossAxisSpacing: 5,
-          mainAxisSpacing: 5,
-          children: <Widget>[
-            GeneralCard(
-              title: "Bike 1",
-              date: "Available for 2 days",
-              kw: 4900,
-            ),
-            GeneralCard(
-              title: "Bike 2",
-              date: "Available for 2 days",
-              kw: 4200,
-            ),
-            GeneralCard(
-              date: "Available for 2 days",
-              title: "Bike 3",
-              kw: 2300,
-            ),
-            GeneralCard(
-              title: "Bike 4",
-              date: "Available for 2 days",
-              kw: 2300,
-            ),
-          ],
-        ),
+      body: GeneralCard(
+        title: "Bike",
+        date: "Available for 2 days",
+        kw: 4900,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
         },
-        child: Text("Repair"),
+        child: Text("Rent"),
         backgroundColor: Colors.pink,
       ),
     );

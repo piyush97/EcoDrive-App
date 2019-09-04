@@ -129,7 +129,7 @@ class _GeneralCardState extends State<GeneralCard> {
                 child: ClipPath(
                   clipper: EnergyRateClipper(),
                   child: Container(
-                    height: 70.0,
+                    height: 50.0,
                     decoration: BoxDecoration(
                       color: Colors.pink,
                     ),
@@ -139,7 +139,7 @@ class _GeneralCardState extends State<GeneralCard> {
               Positioned(
                 left: 0.0,
                 right: 0.0,
-                bottom: 70.0,
+                bottom: 50.0,
                 child: ClipPath(
                   clipper: EnergyRateClipper(),
                   child: Container(
@@ -150,18 +150,6 @@ class _GeneralCardState extends State<GeneralCard> {
                   ),
                 ),
               ),
-              Positioned(
-                  left: 0,
-                  right: -110,
-                  bottom: 18,
-                  child: SizedBox(
-                      width: 40.0,
-                      height: 40.0,
-                      child: FloatingActionButton(
-                        child: Text("Rent"),
-                        backgroundColor: Colors.deepOrange,
-                        onPressed: () => print("pressed"),
-                      )))
             ],
           ),
         ),
