@@ -1,4 +1,4 @@
-package com.example.flutterfirebaselogin;
+package com.example.ecodrive;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

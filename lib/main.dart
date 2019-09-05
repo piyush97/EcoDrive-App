@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:ecodrive/pages/root_page.dart';
 import 'package:ecodrive/services/authentication.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -25,6 +25,5 @@ class MyApp extends StatelessWidget {
         ),
         home: new RootPage(auth: new Auth())
     );
-
   }
 }
