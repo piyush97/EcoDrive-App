@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import "../widgets/general_card.dart";
 import "../main.dart";
 import "../pages/plans.dart";
+import "../pages/rides.dart";
 
 class BikesPage extends StatefulWidget {
   @override
@@ -33,6 +34,10 @@ class _BikesPageState extends State<BikesPage> {
               title: new Text('Your Rides'),
               onTap: () {
                 Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
               },
             ),
             new ListTile(
