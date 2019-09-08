@@ -1,32 +1,71 @@
+import 'package:ecodrive/pages/bikes.dart';
 import 'package:flutter/material.dart';
-import "../widgets/general_card.dart";
-
+import "../main.dart";
 
 class Rides extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Rides',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.pink,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Your Rides",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.pink,
       ),
-      home: Scaffold(appBar: AppBar(  title: Text(
-        "Your rides",
-        style: TextStyle(color: Colors.white),
+      drawer: new Drawer(
+        child: ListView(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+              accountName: new Text('Piyush Mehta'),
+              accountEmail: new Text('testemail@test.com'),
+              currentAccountPicture: new CircleAvatar(
+                backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),
+              ),
+            ),
+            new ListTile(
+              title: new Text('Book a Ride'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new BikesPage()));
+              },
+            ),
+            new ListTile(
+              title: new Text('Log Out'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new MyApp()));
+              },
+            ),
+          ],
+        ),
       ),
-        backgroundColor: Colors.pink,)
-        ,body: Card(child: Text("Booked on 25th August"),),)
-      ,
+      body: ListView(
+        children: <Widget>[
+          Card(
+            child: Text("Booked on 25th August"),
+          ),
+          Card(
+            child: Text("Booked on 25th August"),
+          ),
+          Card(
+            child: Text("Booked on 25th August"),
+          ),
+          Card(
+            child: Text("Booked on 25th August"),
+          ),
+          Card(
+            child: Text("Booked on 25th August"),
+          )
+        ],
+      ),
     );
   }
 }
