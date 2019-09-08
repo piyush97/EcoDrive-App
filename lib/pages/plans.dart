@@ -34,28 +34,6 @@ class PlansPageState extends State<PlansPage> {
         'wallets': ['paytm']
       }
     };
-      void openCheckout1600() async {
-    var options = {
-      'key': 'rzp_test_1DP5mmOlF5G5ag',
-      'amount': 160000,
-      'name': 'Eco Drive',
-      'description': 'Eco Drive Payment',
-      'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
-      'external': {
-        'wallets': ['paytm']
-      }
-    };
-      void openCheckout5000() async {
-    var options = {
-      'key': 'rzp_test_1DP5mmOlF5G5ag',
-      'amount': 500000,
-      'name': 'Eco Drive',
-      'description': 'Eco Drive Payment',
-      'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
-      'external': {
-        'wallets': ['paytm']
-      }
-    };
 
     try {
       _razorpay.open(options);
@@ -230,7 +208,7 @@ class PlansPageState extends State<PlansPage> {
                   Icons.account_balance_wallet,
                   color: Colors.white,
                 ),
-                onPressed: () => openCheckout1600(),
+                onPressed: () => openCheckout2500(),
               ),
             ),
             bodyContent: Padding(
@@ -325,7 +303,7 @@ class PlansPageState extends State<PlansPage> {
                   Icons.account_balance_wallet,
                   color: Colors.white,
                 ),
-                onPressed: () => openCheckout5000(),
+                onPressed: () => openCheckout2500(),
               ),
             ),
             bodyContent: Padding(
