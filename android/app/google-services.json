@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:60893697537:android:a6d32d22aa16de77",
+        "mobilesdk_app_id": "1:60893697537:android:5e790847285ba33aa05200",
         "android_client_info": {
-          "package_name": "com.ecodrive.app"
+          "package_name": "com.example.ecodrive"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "60893697537-21oqv72kavmld15263269mhnp9l5jaf9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecodrive",
+            "certificate_hash": "1bc2cabdcfd080c72ba8ac545cb4f95b7666d383"
+          }
+        },
         {
           "client_id": "60893697537-bvlcc8otp90sm2hvu4kj4s3fk14musdj.apps.googleusercontent.com",
           "client_type": 3
