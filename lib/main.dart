@@ -167,6 +167,7 @@ class _MyAppPageState extends State<MyAppPage> {
             Padding(
               padding: EdgeInsets.all(10),
               child: TextField(
+                autofocus: true,
                 keyboardType: TextInputType.number,
                 maxLength: 10,
                 decoration: InputDecoration(hintText: 'Enter Phone Number'),
