@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       home: MyAppPage(title: 'Eco Drive'),
     );
   }
