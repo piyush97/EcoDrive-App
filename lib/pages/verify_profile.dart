@@ -149,7 +149,8 @@ class _UploaderState extends State<Uploader> {
     Firestore.instance.collection("users").document(uid).setData({
       'phoneno': phone,
       'uid':uid,
-      'license': _uploadedfileurl
+      'license': _uploadedfileurl,
+      'Verified': true,
 
 
     });
