@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import "../widgets/general_card.dart";
 import "../pages/plans.dart";
 import "../pages/rides.dart";
 import 'package:firebase_auth/firebase_auth.dart';
@@ -51,9 +50,23 @@ class _BikesPageState extends State<BikesPage> {
           ],
         ),
       ),
-      body: GeneralCard(
-        title: "Bike",
-        date: "Available for 2 days",
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Card(
+            semanticContainer: true,
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            child: Image.network(
+              'http://pluspng.com/img-png/bicycle-hd-png-bicycle-bike-downhill-stumpjumper-960.png',
+              fit: BoxFit.contain,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            elevation: 5,
+            margin: EdgeInsets.all(20),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
