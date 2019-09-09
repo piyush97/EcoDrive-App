@@ -86,6 +86,17 @@ class _MyAppPageState extends State<MyAppPage> {
               height: 85,
               child: Column(children: [
                 TextField(
+                  decoration: new InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pink),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pink),
+                    ),
+                    border: new UnderlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.pink),
+                    ),
+                  ),
                   keyboardType: TextInputType.number,
                   maxLength: 6,
                   onChanged: (value) {
@@ -176,7 +187,17 @@ class _MyAppPageState extends State<MyAppPage> {
                 textInputAction: TextInputAction.send,
                 keyboardType: TextInputType.numberWithOptions(),
                 maxLength: 10,
-                decoration: InputDecoration(hintText: 'Enter Phone Number'),
+                decoration: InputDecoration(
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pink),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pink),
+                    ),
+                    border: new UnderlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.pink),
+                    ),
+                    hintText: 'Enter Phone Number'),
                 onChanged: (value) {
                   this.phoneNo = value;
                 },
