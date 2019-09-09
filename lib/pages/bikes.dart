@@ -22,15 +22,16 @@ class _BikesPageState extends State<BikesPage> {
       ),
       drawer: new Drawer(
         child: ListView(
+          padding: EdgeInsets.zero,
           children: <Widget>[
-            new UserAccountsDrawerHeader(
+            UserAccountsDrawerHeader(
               accountName: new Text('Piyush Mehta'),
               accountEmail: new Text('testemail@test.com'),
               currentAccountPicture: new CircleAvatar(
                 backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),
               ),
             ),
-            new ListTile(
+            ListTile(
               title: new Text('Your Rides'),
               onTap: () {
                 Navigator.of(context).pop();
@@ -40,7 +41,57 @@ class _BikesPageState extends State<BikesPage> {
                         builder: (BuildContext context) => new Rides()));
               },
             ),
-            new ListTile(
+            ListTile(
+              title: new Text('Verify your Profile'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            ListTile(
+              title: new Text('Loyalty Programme'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            ListTile(
+              title: new Text('Complaint Box'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            ListTile(
+              title: new Text('Repair'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            ListTile(
+              title: new Text('Help?'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            ListTile(
               title: new Text('Log Out'),
               onTap: () async {
                 await _auth.signOut();
