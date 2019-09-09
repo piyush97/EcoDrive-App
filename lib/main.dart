@@ -168,7 +168,8 @@ class _MyAppPageState extends State<MyAppPage> {
               padding: EdgeInsets.all(10),
               child: TextField(
                 autofocus: true,
-                keyboardType: TextInputType.number,
+                textInputAction: TextInputAction.send,
+                keyboardType: TextInputType.numberWithOptions(),
                 maxLength: 10,
                 decoration: InputDecoration(hintText: 'Enter Phone Number'),
                 onChanged: (value) {
