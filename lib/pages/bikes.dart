@@ -1,8 +1,8 @@
+import 'package:ecodrive/pages/verify_profile.dart';
 import 'package:flutter/material.dart';
-import "../widgets/general_card.dart";
-import "../main.dart";
 import "../pages/plans.dart";
 import "../pages/rides.dart";
+import 'package:firebase_auth/firebase_auth.dart';
 
 class BikesPage extends StatefulWidget {
   @override
@@ -10,6 +10,7 @@ class BikesPage extends StatefulWidget {
 }
 
 class _BikesPageState extends State<BikesPage> {
+  FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,15 +23,16 @@ class _BikesPageState extends State<BikesPage> {
       ),
       drawer: new Drawer(
         child: ListView(
+          padding: EdgeInsets.zero,
           children: <Widget>[
-            new UserAccountsDrawerHeader(
+            UserAccountsDrawerHeader(
               accountName: new Text('Piyush Mehta'),
               accountEmail: new Text('testemail@test.com'),
               currentAccountPicture: new CircleAvatar(
                 backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),
               ),
             ),
-            new ListTile(
+            ListTile(
               title: new Text('Your Rides'),
               onTap: () {
                 Navigator.of(context).pop();
@@ -40,22 +42,96 @@ class _BikesPageState extends State<BikesPage> {
                         builder: (BuildContext context) => new Rides()));
               },
             ),
-            new ListTile(
-              title: new Text('Log Out'),
+            ListTile(
+              title: new Text('Verify your Profile'),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (BuildContext context) => new MyApp()));
+                        builder: (BuildContext context) =>
+                            new VerifyProfile()));
+              },
+            ),
+            ListTile(
+              title: new Text('Loyalty Programme'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            ListTile(
+              title: new Text('Complaint Box'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            ListTile(
+              title: new Text('Repair'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            ListTile(
+              title: new Text(
+                'Help?',
+                style: TextStyle(color: Colors.pink.withOpacity(1.0)),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => new Rides()));
+              },
+            ),
+            new Container(
+              height: 1,
+              width: 1,
+              color: Colors.grey,
+              margin: const EdgeInsets.only(left: 5.0, right: 5.0),
+            ),
+            ListTile(
+              title: new Text(
+                'Log Out',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              onTap: () async {
+                await _auth.signOut();
+                Navigator.of(context).pushReplacementNamed('/loginpage');
               },
             ),
           ],
         ),
       ),
-      body: GeneralCard(
-        title: "Bike",
-        date: "Available for 2 days",
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Card(
+            semanticContainer: true,
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            child: Image.network(
+              'http://pluspng.com/img-png/bicycle-hd-png-bicycle-bike-downhill-stumpjumper-960.png',
+              fit: BoxFit.contain,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            elevation: 5,
+            margin: EdgeInsets.all(20),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
