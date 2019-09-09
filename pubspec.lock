@@ -86,19 +86,19 @@ packages:
     source: hosted
     version: "0.14.0+5"
   firebase_core:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0+9"
+    version: "0.4.0+8"
   firebase_storage:
     dependency: "direct main"
     description:
       name: firebase_storage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.6"
+    version: "3.0.4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -130,6 +130,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.4"
+  image_cropper:
+    dependency: "direct main"
+    description:
+      name: image_cropper
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
+  image_picker:
+    dependency: "direct main"
+    description:
+      name: image_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.0+17"
   matcher:
     dependency: transitive
     description:
