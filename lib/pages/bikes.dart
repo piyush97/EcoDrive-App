@@ -82,7 +82,10 @@ class _BikesPageState extends State<BikesPage> {
               },
             ),
             ListTile(
-              title: new Text('Help?'),
+              title: new Text(
+                'Help?',
+                style: TextStyle(color: Colors.pink.withOpacity(1.0)),
+              ),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.push(
@@ -91,8 +94,17 @@ class _BikesPageState extends State<BikesPage> {
                         builder: (BuildContext context) => new Rides()));
               },
             ),
+            new Container(
+              height: 1,
+              width: 1,
+              color: Colors.grey,
+              margin: const EdgeInsets.only(left: 5.0, right: 5.0),
+            ),
             ListTile(
-              title: new Text('Log Out'),
+              title: new Text(
+                'Log Out',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               onTap: () async {
                 await _auth.signOut();
                 Navigator.of(context).pushReplacementNamed('/loginpage');
