@@ -1,9 +1,10 @@
 import 'package:ecodrive/pages/bikes.dart';
 import 'package:flutter/material.dart';
-import "../main.dart";
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Rides extends StatelessWidget {
   // This widget is the root of your application.
+  FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +37,9 @@ class Rides extends StatelessWidget {
             ),
             new ListTile(
               title: new Text('Log Out'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new MyApp()));
+              onTap: () async {
+                await _auth.signOut();
+                Navigator.of(context).pushReplacementNamed('/loginpage');
               },
             ),
           ],
