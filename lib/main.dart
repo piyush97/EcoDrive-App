@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Phone Authentication',
       routes: <String, WidgetBuilder>{
         '/homepage': (BuildContext context) => BikesPage(),
@@ -49,7 +50,7 @@ class _MyAppPageState extends State<MyAppPage> {
     };
     try {
       await _auth.verifyPhoneNumber(
-          phoneNumber: this.phoneNo, // PHONE NUMBER TO SEND OTP
+          phoneNumber: '+91${this.phoneNo}', // PHONE NUMBER TO SEND OTP
           codeAutoRetrievalTimeout: (String verId) {
             //Starts the phone number verification process for the given phone number.
             //Either sends an SMS with a 6 digit code to the phone number specified, or sign's the user in and [verificationCompleted] is called.
@@ -75,11 +76,13 @@ class _MyAppPageState extends State<MyAppPage> {
         barrierDismissible: false,
         builder: (BuildContext context) {
           return new AlertDialog(
-            title: Text('Enter SMS Code'),
+            title: Text('Enter OTP'),
             content: Container(
               height: 85,
               child: Column(children: [
                 TextField(
+                  keyboardType: TextInputType.number,
+                  maxLength: 6,
                   onChanged: (value) {
                     this.smsOTP = value;
                   },
@@ -164,8 +167,9 @@ class _MyAppPageState extends State<MyAppPage> {
             Padding(
               padding: EdgeInsets.all(10),
               child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'Enter Phone Number Eg. +910000000000'),
+                keyboardType: TextInputType.number,
+                maxLength: 10,
+                decoration: InputDecoration(hintText: 'Enter Phone Number'),
                 onChanged: (value) {
                   this.phoneNo = value;
                 },
