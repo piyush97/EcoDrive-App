@@ -3,6 +3,7 @@ import 'package:ecodrive/pages/rides.dart';
 import "package:flutter/material.dart";
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class VerifyProfile extends StatelessWidget {
   FirebaseAuth _auth = FirebaseAuth.instance;
