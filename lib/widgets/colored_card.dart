@@ -97,7 +97,7 @@ class _ColoredCardState extends State<ColoredCard> {
               ClipOval(
                 clipper: ColoredCardClipperFirst(widget.cardHeight),
                 child: Container(
-                  color: Colors.white.withOpacity(0.05),
+                  color: Colors.pink.withOpacity(0.05),
                   height: widget.cardHeight,
                 ),
               ),
