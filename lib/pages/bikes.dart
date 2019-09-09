@@ -1,3 +1,4 @@
+import 'package:ecodrive/pages/verify_profile.dart';
 import 'package:flutter/material.dart';
 import "../pages/plans.dart";
 import "../pages/rides.dart";
@@ -48,7 +49,8 @@ class _BikesPageState extends State<BikesPage> {
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
+                        builder: (BuildContext context) =>
+                            new VerifyProfile()));
               },
             ),
             ListTile(
