@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import "../widgets/general_card.dart";
-import "../main.dart";
 import "../pages/plans.dart";
 import "../pages/rides.dart";
+import 'package:firebase_auth/firebase_auth.dart';
 
 class BikesPage extends StatefulWidget {
   @override
@@ -10,6 +10,7 @@ class BikesPage extends StatefulWidget {
 }
 
 class _BikesPageState extends State<BikesPage> {
+  FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,12 +43,9 @@ class _BikesPageState extends State<BikesPage> {
             ),
             new ListTile(
               title: new Text('Log Out'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new MyApp()));
+              onTap: () async {
+                await _auth.signOut();
+                Navigator.of(context).pushReplacementNamed('/loginpage');
               },
             ),
           ],
