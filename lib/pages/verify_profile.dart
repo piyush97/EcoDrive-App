@@ -120,16 +120,14 @@ class _UploaderState extends State<Uploader> {
   final FirebaseStorage _storage =
       FirebaseStorage(storageBucket: 'gs://bay-max-5311c.appspot.com');
 
-
   StorageUploadTask _uploadTask;
-  String _uploadedfileurl="";
+  String _uploadedfileurl = "";
   FirebaseAuth _auth = FirebaseAuth.instance;
   FirebaseUser user;
   String uid;
   String phone;
 
-  _getuserId() async{
-
+  _getuserId() async {
     user = await _auth.currentUser();
     setState(() {
       uid = user.uid;
@@ -137,51 +135,36 @@ class _UploaderState extends State<Uploader> {
       print(uid);
       print(phone);
       _sendDetailstoDb();
-
-
     });
-
-
-
-
   }
-  _sendDetailstoDb() async{
+
+  _sendDetailstoDb() async {
     Firestore.instance.collection("users").document(uid).setData({
       'phoneno': phone,
-      'uid':uid,
+      'uid': uid,
       'license': _uploadedfileurl,
       'Verified': true,
-
-
     });
   }
 
   _startUpload() async {
     String filePath = 'images/${DateTime.now()}.png';
 
-    StorageReference _storageReference = FirebaseStorage.instance.ref().child(filePath);
-
-
+    StorageReference _storageReference =
+        FirebaseStorage.instance.ref().child(filePath);
 
     setState(() {
       //_uploadTask = _storage.ref().child(filePath).putFile(widget.file);
       _uploadTask = _storageReference.putFile(widget.file);
-
     });
     await _uploadTask.onComplete;
     print('File Uploaded');
-    _storageReference.getDownloadURL().then((fileurl){
+    _storageReference.getDownloadURL().then((fileurl) {
       setState(() {
         _uploadedfileurl = fileurl;
-
       });
       _getuserId();
-
-
-
     });
-
-
   }
 
   @override
@@ -226,7 +209,7 @@ class _UploaderState extends State<Uploader> {
     } else {
       return FlatButton.icon(
           color: Colors.blue,
-          label: Text('Upload to Firebase'),
+          label: Text('Upload'),
           icon: Icon(Icons.cloud_upload),
           onPressed: _startUpload);
     }
