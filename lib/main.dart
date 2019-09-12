@@ -2,6 +2,11 @@ import 'package:ecodrive/pages/bikes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
+import 'package:ecodrive/pages/otppage.dart';
+import 'package:ecodrive/pages/loginui.dart';
+import 'package:ecodrive/services/authentication.dart';
+import 'package:ecodrive/pages/root_page.dart';
+
 
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -19,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/homepage': (BuildContext context) => BikesPage(),
         '/loginpage': (BuildContext context) => MyApp(),
+        '/otp':(BuildContext context)=>OtpPage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.pink,
@@ -26,9 +32,11 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home: MyAppPage(title: 'Eco Drive'),
+      home: RootPage(auth: Auth()),//MyAppPage(title: 'Eco Drive'),
     );
   }
+
+
 }
 
 class MyAppPage extends StatefulWidget {
