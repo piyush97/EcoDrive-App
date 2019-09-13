@@ -143,7 +143,7 @@ class _UploaderState extends State<Uploader> {
       'phoneno': phone,
       'uid': uid,
       'license': _uploadedfileurl,
-      'Verified': true,
+      'Verified': false,
     });
   }
 

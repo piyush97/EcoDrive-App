@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ecodrive/services/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecodrive/pages/adddetails_page.dart';
 
 class OtpPage extends StatefulWidget {
   OtpPage({this.auth,this.onSignedIn,this.phoneno});
@@ -21,6 +23,7 @@ class OtpPageState extends State<OtpPage> {
   TextEditingController controller5 = new TextEditingController();
   TextEditingController controller6 = new TextEditingController();
   String one,two,three,four,five,six;
+  bool checkdoc=false;
 
   TextEditingController currController = new TextEditingController();
 
@@ -567,21 +570,42 @@ class OtpPageState extends State<OtpPage> {
     finalotp = this.one + this.two + this.three + this.four+this.five+this.six;
     print(finalotp);
 
+
+
     user = await widget.auth.signIn(finalotp);
     print(user);
-     FirebaseUser useri = await widget.auth.getCurrentUser().then((usr){
+     FirebaseUser useri = await widget.auth.getCurrentUser();
+
+     await isuserdata_present(useri.uid);
+     if(checkdoc){
        setState(() {
+
          this.widget.onSignedIn();
+         Navigator.pop(context);
 
        });
-
+     }
+     else{
        Navigator.pop(context);
-       return usr;
-     });
+       Navigator.push(context, MaterialPageRoute(builder: (context)=> Adddetails(auth: widget.auth, onSignedIn: widget.onSignedIn, first: false,)));
+
+     }
 
 
 
 
+  }
+
+  Future<bool> isuserdata_present(String uid) async {
+    bool check = false;
+
+    DocumentReference myref =
+    Firestore.instance.collection("users").document(uid);
+    await myref.get().then((Doc) {
+      checkdoc = check = Doc.exists;
+      print("check:" + check.toString());
+      return check;
+    });
   }
 
   void inputTextToField(String str) {
