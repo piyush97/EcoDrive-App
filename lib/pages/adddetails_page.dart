@@ -88,10 +88,14 @@ class _adddetails extends State<Adddetails> {
   void adduserdata(FirebaseUser user) async {
     Firestore.instance.collection("users").document(user.uid).setData({
       'Email': user.email,
-      'Name': user.displayName != null ? user.displayName : name,
+      'Name': name,
       'address': address,
-      'phone': phone,
-      'passwd': _password != null ? _password : "passwd"
+      'DLno': phone,
+      'passwd': _password != null ? _password : "passwd",
+      'phoneno': "",
+      'uid': user.uid,
+      'license': "",
+      'Verified': false,
     });
     setnext();
   }
@@ -181,11 +185,11 @@ class _adddetails extends State<Adddetails> {
           _errorMessageStep2 = "Invalid Address";
           // ShowaddAddressdailog();
         });
-      } else if (phone == null || phone.length < 10 || phone.length > 10) {
+      } else if (phone == null || phone.length < 10 ) {
         setState(() {
           // Navigator.of(context).pop(context);
           _isloading = false;
-          _errorMessageStep2 = "Invalid Phone";
+          _errorMessageStep2 = "Invalid DL no";
           // ShowaddAddressdailog();
         });
       }
@@ -243,12 +247,11 @@ class _adddetails extends State<Adddetails> {
                 padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
                 child: new TextField(
                   controller: _filterphone,
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.text,
                   scrollPadding: const EdgeInsets.all(20.0),
                   decoration: InputDecoration(
-                    prefixIcon: new Icon(Icons.phone),
-                    hintText: "Enter your phone no",
-                    prefix: new Text("+91"),
+                    prefixIcon: new Icon(Icons.credit_card),
+                    hintText: "Enter your DL no",
                   ),
                 ),
               ),

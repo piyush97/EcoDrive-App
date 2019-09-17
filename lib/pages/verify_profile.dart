@@ -139,7 +139,7 @@ class _UploaderState extends State<Uploader> {
   }
 
   _sendDetailstoDb() async {
-    Firestore.instance.collection("users").document(uid).setData({
+    Firestore.instance.collection("users").document(uid).updateData({
       'phoneno': phone,
       'uid': uid,
       'license': _uploadedfileurl,
