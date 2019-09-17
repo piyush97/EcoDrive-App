@@ -185,7 +185,7 @@ class _adddetails extends State<Adddetails> {
           _errorMessageStep2 = "Invalid Address";
           // ShowaddAddressdailog();
         });
-      } else if (phone == null || phone.length < 10 ) {
+      } else if (phone == null) {
         setState(() {
           // Navigator.of(context).pop(context);
           _isloading = false;
