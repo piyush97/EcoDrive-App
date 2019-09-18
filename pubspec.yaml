@@ -32,6 +32,8 @@ dependencies:
   firebase_storage: 3.0.4
   image_cropper: 1.0.2
   image_picker: 0.6.0+17
+  date_range_picker: ^1.0.5
+  intl: ^0.16.0
   firebase_auth:
 dev_dependencies:
   flutter_test:

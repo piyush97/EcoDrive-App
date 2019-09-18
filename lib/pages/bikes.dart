@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import "../pages/plans.dart";
 import "../pages/rides.dart";
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:ecodrive/pages/book.dart';
 
 class BikesPage extends StatefulWidget {
   @override
@@ -140,7 +141,7 @@ class _BikesPageState extends State<BikesPage> {
               context,
               MaterialPageRoute<Null>(
                 builder: (BuildContext context) {
-                  return PlansPage();
+                  return Selectdate();
                 },
                 fullscreenDialog: true,
               ));

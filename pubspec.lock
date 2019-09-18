@@ -71,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+  date_range_picker:
+    dependency: "direct main"
+    description:
+      name: date_range_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.6"
   eventify:
     dependency: transitive
     description:
@@ -158,6 +165,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.0+17"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.0"
   matcher:
     dependency: transitive
     description:
