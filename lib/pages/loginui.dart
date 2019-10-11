@@ -85,22 +85,8 @@ class _Loginui extends State<Loginui> {
                       ),
                       Flexible(
                         child: new TextFormField(
-                          textAlign: TextAlign.center,
-                          autofocus: false,
-                          enabled: false,
-                          initialValue: "+91",
-                          style: TextStyle(fontSize: 20.0, color: Colors.white),
-                        ),
-                        flex: 3,
-                      ),
-                      Flexible(
-                        child: new Container(),
-                        flex: 1,
-                      ),
-                      Flexible(
-                        child: new TextFormField(
                           maxLength: 10,
-                          textAlign: TextAlign.start,
+                          textAlign: TextAlign.center,
                           autofocus: true,
                           controller: _filterphone,
                           enabled: true,
