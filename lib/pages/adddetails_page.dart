@@ -5,7 +5,6 @@ import 'package:ecodrive/services/authentication.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
 class Adddetails extends StatefulWidget {
   Adddetails({this.auth, this.onSignedIn, this.first});
   final BaseAuth auth;
@@ -211,7 +210,8 @@ class _adddetails extends State<Adddetails> {
     return new Scaffold(
       appBar: new AppBar(
         centerTitle: true,
-        title: new Text("Complete your signup"),
+        backgroundColor: Colors.green,
+        title: new Text("Add details"),
       ),
       body: new Container(
         padding: EdgeInsets.all(16.0),
@@ -227,8 +227,11 @@ class _adddetails extends State<Adddetails> {
                   keyboardType: TextInputType.text,
                   scrollPadding: const EdgeInsets.all(20.0),
                   decoration: InputDecoration(
-                    prefixIcon: new Icon(Icons.person_pin),
-                    hintText: "Enter your Name",
+                    fillColor: Colors.green,
+                    focusColor: Colors.green,
+                    hoverColor: Colors.green,
+                    prefixIcon: new Icon(Icons.person),
+                    hintText: "Enter your full Name",
                   ),
                 ),
               ),
@@ -236,10 +239,14 @@ class _adddetails extends State<Adddetails> {
                 padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
                 child: new TextField(
                   controller: _filteraddress,
+                  keyboardType: TextInputType.text,
                   scrollPadding: const EdgeInsets.all(20.0),
                   decoration: InputDecoration(
+                    fillColor: Colors.green,
+                    focusColor: Colors.green,
+                    hoverColor: Colors.green,
                     prefixIcon: new Icon(Icons.location_city),
-                    hintText: " Enter your full address",
+                    hintText: " Enter your address",
                   ),
                 ),
               ),
@@ -250,8 +257,11 @@ class _adddetails extends State<Adddetails> {
                   keyboardType: TextInputType.text,
                   scrollPadding: const EdgeInsets.all(20.0),
                   decoration: InputDecoration(
+                    fillColor: Colors.green,
+                    focusColor: Colors.green,
+                    hoverColor: Colors.green,
                     prefixIcon: new Icon(Icons.credit_card),
-                    hintText: "Enter your DL no",
+                    hintText: "Enter your Driving License number",
                   ),
                 ),
               ),
@@ -310,8 +320,8 @@ class _adddetails extends State<Adddetails> {
             elevation: 7.0,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(30.0)),
-            color: Colors.pinkAccent,
-            child: new Text('Sumbmit',
+            color: Colors.green,
+            child: new Text('Submit',
                 style: new TextStyle(fontSize: 20.0, color: Colors.white)),
             onPressed: () {
               setState(() {
