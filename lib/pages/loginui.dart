@@ -53,87 +53,88 @@ class _Loginui extends State<Loginui> {
           scrollDirection: Axis.vertical,
           children: <Widget>[
             Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 16.0, top: 20.0, right: 16.0),
-                    child: Text(
-                      "Enter your phone number",
-                      style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                      textAlign: TextAlign.center,
-                    ),
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 16.0, top: 20.0, right: 16.0),
+                  child: Text(
+                    "Enter your phone number",
+                    style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                    textAlign: TextAlign.center,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 30.0, bottom: 100.0),
-                    child: Image.asset(
-                      'assets/icon/icon.png',
-                      height: 200.0,
-                      width: 200.0,
-                    ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30.0, bottom: 100.0),
+                  child: Image.asset(
+                    'assets/icon/icon.png',
+                    height: 200.0,
+                    width: 200.0,
                   ),
-                  Row(
-                    children: <Widget>[
-                      Flexible(
-                        child: new Container(),
-                        flex: 1,
-                      ),
-                      Flexible(
-                        child: new TextFormField(
-                          maxLength: 10,
-                          textAlign: TextAlign.center,
-                          autofocus: true,
-                          controller: _filterphone,
-                          enabled: true,
-                          keyboardType: TextInputType.number,
-                          cursorColor: Colors.black,
-                          decoration: new InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green),
-                            ),
-                            border: new UnderlineInputBorder(
-                              borderSide: new BorderSide(color: Colors.green),
-                            ),
+                ),
+                Row(
+                  children: <Widget>[
+                    Flexible(
+                      child: new Container(),
+                      flex: 1,
+                    ),
+                    Flexible(
+                      child: new TextFormField(
+                        maxLength: 10,
+                        textAlign: TextAlign.center,
+                        autofocus: true,
+                        controller: _filterphone,
+                        enabled: true,
+                        keyboardType: TextInputType.number,
+                        cursorColor: Colors.black,
+                        decoration: new InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.green),
                           ),
-                          textInputAction: TextInputAction.done,
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.black,
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.green),
+                          ),
+                          border: new UnderlineInputBorder(
+                            borderSide: new BorderSide(color: Colors.green),
                           ),
                         ),
-                        flex: 9,
+                        textInputAction: TextInputAction.done,
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.black,
+                        ),
                       ),
-                      Flexible(
-                        child: new Container(),
-                        flex: 1,
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
-                    child: new Container(
-                      width: 250.0,
-                      height: 40.0,
-                      child: new RaisedButton(
-                          onPressed: () {
-                            go_otp();
-                          },
-                          child: Text("Get OTP"),
-                          textColor: Colors.white,
-                          color: Colors.green,
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(30.0))),
+                      flex: 9,
                     ),
-                  )
-                ])
+                    Flexible(
+                      child: new Container(),
+                      flex: 1,
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
+                  child: new Container(
+                    width: 250.0,
+                    height: 40.0,
+                    child: new RaisedButton(
+                        onPressed: () {
+                          go_otp();
+                        },
+                        child: Text("Get OTP"),
+                        textColor: Colors.white,
+                        color: Colors.green,
+                        shape: new RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(30.0))),
+                  ),
+                )
+              ],
+            )
           ],
         ));
     // TODO: implement build
