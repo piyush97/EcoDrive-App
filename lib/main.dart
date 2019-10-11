@@ -26,12 +26,6 @@ class MyApp extends StatelessWidget {
         '/loginpage': (BuildContext context) => MyApp(),
         '/otp':(BuildContext context)=>OtpPage(),
       },
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
       home: RootPage(auth: Auth()),//MyAppPage(title: 'Eco Drive'),
     );
   }
