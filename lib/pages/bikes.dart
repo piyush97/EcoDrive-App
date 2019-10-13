@@ -20,7 +20,7 @@ class _BikesPageState extends State<BikesPage> {
           "Book your Ecodrive!",
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.green,
       ),
       drawer: new Drawer(
         child: ListView(
@@ -147,7 +147,7 @@ class _BikesPageState extends State<BikesPage> {
               ));
         },
         child: Text("Rent"),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.green,
       ),
     );
   }

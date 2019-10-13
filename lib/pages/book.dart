@@ -24,6 +24,7 @@ class _SelectdateState extends State<Selectdate> {
         title: Text(
           'Book your ride',
         ),
+        backgroundColor: Colors.green,
       ),
       body: Column(
         children: <Widget>[
@@ -39,10 +40,10 @@ class _SelectdateState extends State<Selectdate> {
                       Expanded(
                         child: Container(
                           padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           height: 60,
                           child: Container(
-                            color: Colors.grey[200],
+                            color: Colors.green,
                             child: Center(
                               child: Text(
                                 startDate == null
@@ -57,10 +58,10 @@ class _SelectdateState extends State<Selectdate> {
                       Expanded(
                         child: Container(
                           padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           height: 60,
                           child: Container(
-                            color: Colors.grey[200],
+                            color: Colors.green,
                             child: Center(
                               child: Text(
                                 endDate == null
@@ -78,10 +79,11 @@ class _SelectdateState extends State<Selectdate> {
                     height: 25,
                   ),
                   MaterialButton(
-                    color: Theme.of(context).primaryColor,
+                    color: Colors.green,
+                    textColor: Colors.black,
                     onPressed: () async {
                       final List<DateTime> picked =
-                      await DateRangePicker.showDatePicker(
+                          await DateRangePicker.showDatePicker(
                         context: context,
                         initialFirstDate: DateTime.now(),
                         initialLastDate: (DateTime.now()).add(
@@ -92,7 +94,7 @@ class _SelectdateState extends State<Selectdate> {
                       );
                       if (picked != null && picked.length == 2) {
                         setState(
-                              () {
+                          () {
                             startDate = picked[0];
                             endDate = picked[1];
                           },
@@ -102,7 +104,7 @@ class _SelectdateState extends State<Selectdate> {
                     child: Text(
                       'Pick Dates',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -149,7 +151,7 @@ class _SelectdateState extends State<Selectdate> {
                       ],
                       onChanged: (value) {
                         setState(
-                              () {
+                          () {
                             _dropDownValue = value;
                           },
                         );

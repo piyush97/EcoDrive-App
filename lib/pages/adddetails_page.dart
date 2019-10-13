@@ -31,7 +31,7 @@ class _adddetails extends State<Adddetails> {
   String address = '';
 
   bool _terms = false;
-  bool _buildwaitaftervalidat = false;
+  bool _buildwaitaftervalidat = true;
 
   String _password;
 
@@ -89,9 +89,9 @@ class _adddetails extends State<Adddetails> {
       'Email': user.email,
       'Name': name,
       'address': address,
-      'DLno': phone,
+      'DLno': "",
       'passwd': _password != null ? _password : "passwd",
-      'phoneno': "",
+      'phoneno': phone,
       'uid': user.uid,
       'license': "",
       'Verified': false,
@@ -147,12 +147,12 @@ class _adddetails extends State<Adddetails> {
   }
 
   void performCheck(FirebaseUser guser) {
-    //print(phone.length);
-    //print(address.length);
+    print(phone.length);
+    print(address.length);
     if (address != null &&
         phone != null &&
         address.length > 5 &&
-        phone.length == 10 &&
+        phone.length == 15 &&
         name != null &&
         name.length > 3) {
       //Navigator.of(context).pop();
@@ -170,28 +170,6 @@ class _adddetails extends State<Adddetails> {
         Navigator.pop(context);
       }
     } else {
-      if (name == null || name.length < 3) {
-        setState(() {
-          // Navigator.of(context).pop(context);
-          _isloading = false;
-          _errorMessageStep2 = "Invalid Name";
-          // ShowaddAddressdailog();
-        });
-      } else if (address == null || address.length < 5) {
-        setState(() {
-          //Navigator.of(context).pop(context);
-          _isloading = false;
-          _errorMessageStep2 = "Invalid Address";
-          // ShowaddAddressdailog();
-        });
-      } else if (phone == null) {
-        setState(() {
-          // Navigator.of(context).pop(context);
-          _isloading = false;
-          _errorMessageStep2 = "Invalid DL no";
-          // ShowaddAddressdailog();
-        });
-      }
       /*
       else if (!_terms) {
         setState(() {
@@ -325,7 +303,7 @@ class _adddetails extends State<Adddetails> {
                 style: new TextStyle(fontSize: 20.0, color: Colors.white)),
             onPressed: () {
               setState(() {
-                _isloading = true;
+                _validateAndSave();
               });
               performCheck(guser);
             },
