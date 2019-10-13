@@ -7,7 +7,6 @@ import 'package:ecodrive/pages/loginui.dart';
 import 'package:ecodrive/services/authentication.dart';
 import 'package:ecodrive/pages/root_page.dart';
 
-
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
@@ -21,16 +20,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Phone Authentication',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.green,
+        accentColor: Colors.greenAccent,
+      ),
       routes: <String, WidgetBuilder>{
         '/homepage': (BuildContext context) => BikesPage(),
         '/loginpage': (BuildContext context) => MyApp(),
-        '/otp':(BuildContext context)=>OtpPage(),
+        '/otp': (BuildContext context) => OtpPage(),
       },
-      home: RootPage(auth: Auth()),//MyAppPage(title: 'Eco Drive'),
+      home: RootPage(auth: Auth()), //MyAppPage(title: 'Eco Drive'),
     );
   }
-
-
 }
 
 class MyAppPage extends StatefulWidget {
