@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Phone Authentication',
       theme: ThemeData(
-        brightness: Brightness.dark,
         primaryColor: Colors.green,
         accentColor: Colors.greenAccent,
       ),
