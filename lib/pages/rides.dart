@@ -13,7 +13,7 @@ class Rides extends StatelessWidget {
             "Your Rides",
             style: TextStyle(color: Colors.white),
           ),
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.green,
         ),
         body: Center(child: SwipeList()));
   }
@@ -118,7 +118,7 @@ class ListItemWidget extends State<SwipeList> {
   }
 
   static List getDummyList() {
-    List list = List.generate(10, (i) {
+    List list = List.generate(4, (i) {
       return "Bike No ${i + 1}";
     });
     return list;

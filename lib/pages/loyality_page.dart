@@ -1,6 +1,7 @@
 import 'package:ecodrive/pages/bikes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:expandable_card/expandable_card.dart';
 
 class LoyalityPage extends StatelessWidget {
   // This widget is the root of your application.
@@ -108,8 +109,35 @@ class LoyalityPage extends StatelessWidget {
         ),
       ),
       body: Scaffold(
-        body: Card(
-          child: Text("Start booking to get loyality bonus"),
+        body: ExpandableCardPage(
+          page: Center(
+            child: Text(
+              "Your Loyality Points!",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+          ),
+          expandableCard: ExpandableCard(
+            maxHeight: 800,
+            backgroundColor: Colors.green,
+            hasRoundedCorners: true,
+            minHeight: 200,
+            children: <Widget>[
+              Container(
+                height: 300,
+              ),
+              Text(
+                "12",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 32,
+                    color: Colors.pinkAccent),
+              ),
+              Text(
+                " Eco Points",
+                style: TextStyle(fontSize: 32, color: Colors.white),
+              ),
+            ],
+          ),
         ),
       ),
     );
