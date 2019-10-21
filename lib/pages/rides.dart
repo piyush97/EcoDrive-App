@@ -8,124 +8,119 @@ class Rides extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Your Rides",
-          style: TextStyle(color: Colors.white),
+        appBar: AppBar(
+          title: Text(
+            "Your Rides",
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.pink,
         ),
-        backgroundColor: Colors.pink,
-      ),
-      drawer: new Drawer(
-        child: ListView(
-          children: <Widget>[
-            new UserAccountsDrawerHeader(
-              accountName: new Text('Piyush Mehta'),
-              accountEmail: new Text('testemail@test.com'),
-              currentAccountPicture: new CircleAvatar(
-                backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),
+        body: Center(child: SwipeList()));
+  }
+}
+
+class SwipeList extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return ListItemWidget();
+  }
+}
+
+class ListItemWidget extends State<SwipeList> {
+  List items = getDummyList();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return Dismissible(
+          key: Key(items[index]),
+          background: Container(
+            alignment: AlignmentDirectional.centerEnd,
+            color: Colors.red,
+            child: Icon(
+              Icons.delete,
+              color: Colors.white,
+            ),
+          ),
+          onDismissed: (direction) {
+            setState(() {
+              items.removeAt(index);
+            });
+          },
+          direction: DismissDirection.endToStart,
+          child: Card(
+            elevation: 5,
+            child: Container(
+              height: 100.0,
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    height: 280.0,
+                    width: 180.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(5),
+                          topLeft: Radius.circular(5)),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          'http://pluspng.com/img-png/bicycle-hd-png-bicycle-bike-downhill-stumpjumper-960.png',
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(10, 2, 0, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            items[index],
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 3, 0, 3),
+                            child: Container(
+                              width: 30,
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.teal),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 5, 0, 2),
+                            child: Container(
+                              width: 280,
+                              child: Text(
+                                "Booking plan: weekly",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Color.fromARGB(255, 48, 48, 54)),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
-            new ListTile(
-              title: new Text('Book a Ride'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new BikesPage()));
-              },
-            ),
-            ListTile(
-              title: new Text('Verify your Profile'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
-              },
-            ),
-            ListTile(
-              title: new Text('Loyalty Programme'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
-              },
-            ),
-            ListTile(
-              title: new Text('Complaint Box'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
-              },
-            ),
-            ListTile(
-              title: new Text('Repair'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
-              },
-            ),
-            ListTile(
-              title: new Text(
-                'Help?',
-                style: TextStyle(color: Colors.pink.withOpacity(1.0)),
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
-              },
-            ),
-            new Container(
-              height: 1,
-              width: 1,
-              color: Colors.grey,
-              margin: const EdgeInsets.only(left: 5.0, right: 5.0),
-            ),
-            ListTile(
-              title: new Text(
-                'Log Out',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              onTap: () async {
-                await _auth.signOut();
-                Navigator.of(context).pushReplacementNamed('/loginpage');
-              },
-            ),
-          ],
-        ),
-      ),
-      body: ListView(
-        children: <Widget>[
-          Card(
-            child: Text("Booked on 25th August"),
           ),
-          Card(
-            child: Text("Booked on 25th August"),
-          ),
-          Card(
-            child: Text("Booked on 25th August"),
-          ),
-          Card(
-            child: Text("Booked on 25th August"),
-          ),
-          Card(
-            child: Text("Booked on 25th August"),
-          )
-        ],
-      ),
-    );
+        );
+      },
+    ));
+  }
+
+  static List getDummyList() {
+    List list = List.generate(10, (i) {
+      return "Bike No ${i + 1}";
+    });
+    return list;
   }
 }
