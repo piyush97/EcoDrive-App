@@ -1,5 +1,6 @@
 import 'package:ecodrive/pages/complaint_box.dart';
 import 'package:ecodrive/pages/loyality_page.dart';
+import 'package:ecodrive/pages/repair_page.dart';
 import 'package:ecodrive/pages/verify_profile.dart';
 import 'package:flutter/material.dart';
 import "../pages/plans.dart";
@@ -84,7 +85,7 @@ class _BikesPageState extends State<BikesPage> {
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
+                        builder: (BuildContext context) => new RepairPage()));
               },
             ),
             ListTile(

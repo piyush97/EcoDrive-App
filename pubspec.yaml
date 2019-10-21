@@ -36,6 +36,7 @@ dependencies:
   intl: ^0.16.0
   firebase_auth:
   expandable_card: ^0.0.3+1
+  link: ^1.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
