@@ -138,20 +138,23 @@ class _BikesPageState extends State<BikesPage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-          Navigator.push(
-              context,
-              MaterialPageRoute<Null>(
-                builder: (BuildContext context) {
-                  return Selectdate();
-                },
-                fullscreenDialog: true,
-              ));
-        },
-        child: Text("Rent"),
-        backgroundColor: Colors.green,
+      floatingActionButton: Transform.scale(
+        scale: 1.5,
+        child: FloatingActionButton(
+          onPressed: () {
+            // Add your onPressed code here!
+            Navigator.push(
+                context,
+                MaterialPageRoute<Null>(
+                  builder: (BuildContext context) {
+                    return Selectdate();
+                  },
+                  fullscreenDialog: true,
+                ));
+          },
+          child: Text("Rent"),
+          backgroundColor: Colors.green,
+        ),
       ),
     );
   }
