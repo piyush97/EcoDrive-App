@@ -1,3 +1,4 @@
+import 'package:ecodrive/pages/plans.dart';
 import 'package:flutter/material.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 import 'package:intl/intl.dart';
@@ -15,6 +16,11 @@ class _SelectdateState extends State<Selectdate> {
   DateFormat formatDate = DateFormat('dd/MM/yyyy');
 
   String _dropDownValue;
+
+  TextEditingController couponController = TextEditingController();
+  bool isCouponCodeApplied = false;
+
+  int diff = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +103,10 @@ class _SelectdateState extends State<Selectdate> {
                           () {
                             startDate = picked[0];
                             endDate = picked[1];
+                            debugPrint('${startDate.day.toString()}');
+                            debugPrint('${endDate.day.toString()}');
+                            diff = (endDate.day - startDate.day) + 1;
+                            debugPrint('${diff * 5}');
                           },
                         );
                       }
@@ -156,6 +166,132 @@ class _SelectdateState extends State<Selectdate> {
                           },
                         );
                       },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 70.0, left: 16.0, right: 16.0),
+                    child: Card(
+                      color: Colors.grey[100],
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: TextField(
+                                onChanged: (val) {
+                                  // initiateSearch(val);
+                                },
+                                controller: couponController,
+                                // keyboardType: TextInputType.number,
+                                decoration: InputDecoration(
+                                    labelText: "Enter coupon code",
+                                    hintText: "",
+                                    errorStyle: TextStyle(
+                                        color: Colors.white, fontSize: 10.0),
+                                    border: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(4.0))),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 4.0),
+                              child: Container(
+                                width: double.infinity,
+                                child: RaisedButton(
+                                  color: Colors.blue[100],
+                                  child: Text('Apply Coupon'),
+                                  onPressed: () {
+                                    setState(() {
+                                      if (isCouponCodeApplied) {
+                                        final snackBar = SnackBar(
+                                            content: Text(
+                                                "You greedy! Coupon code already applied."));
+
+// Find the Scaffold in the widget tree and use it to show a SnackBar.
+                                        _scaffoldKey.currentState
+                                            .showSnackBar(snackBar);
+//Scaffold.of(context).showSnackBar(snackBar);
+                                      } else {
+                                        if (couponController.text.isEmpty) {
+                                          final snackBar = SnackBar(
+                                              content: Text(
+                                                  "Coupon code can't be empty"));
+
+// Find the Scaffold in the widget tree and use it to show a SnackBar.
+                                          _scaffoldKey.currentState
+                                              .showSnackBar(snackBar);
+//Scaffold.of(context).showSnackBar(snackBar);
+                                        } else {
+                                          this.isCouponCodeApplied = true;
+                                          couponController.text = '';
+                                        }
+                                      }
+                                    });
+                                  },
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 24.0, left: 8.0, right: 8.0),
+                              child: Text('Ride Rate:  Rs 5/day',
+                                  style: TextStyle(fontSize: 15.0)),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 2.0, left: 8.0, right: 8.0),
+                              child: Text('Booked for : $diff days',
+                                  style: TextStyle(fontSize: 14.0)),
+                            ),
+                            isCouponCodeApplied
+                                ? Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'Coupon applied successfully!!',
+                                      style: TextStyle(
+                                          fontSize: 14.0, color: Colors.green),
+                                    ),
+                                  )
+                                : Container(height: 8.0),
+                            // SizedBox(
+                            //   height: 10.0,
+                            // ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: <Widget>[
+                                  Text('Total bill:',
+                                      style: TextStyle(fontSize: 16.0)),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  isCouponCodeApplied
+                                      ? Text('Rs ${diff * 5}',
+                                          style: TextStyle(
+                                              decoration:
+                                                  TextDecoration.lineThrough))
+                                      : Text('Rs ${diff * 5}',
+                                          style: TextStyle()),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  isCouponCodeApplied
+                                      ? Text(' ${diff * 5 - (diff * 5 * 0.1)}')
+                                      : Container(),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -222,5 +358,9 @@ class _SelectdateState extends State<Selectdate> {
       );
       return;
     }
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => PlansPage()),
+    );
   }
 }

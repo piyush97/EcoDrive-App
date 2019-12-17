@@ -8,6 +8,7 @@ import 'package:ecodrive/services/authentication.dart';
 import 'package:ecodrive/pages/root_page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();//this should be first line in
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(new MyApp());
