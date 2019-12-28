@@ -1,4 +1,5 @@
 import 'package:ecodrive/pages/bikes.dart';
+import 'package:ecodrive/pages/help.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:expandable_card/expandable_card.dart';
@@ -86,7 +87,10 @@ class LoyalityPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (BuildContext context) => new LoyalityPage()));
+                        builder: (BuildContext context) =>
+                         new LoyalityPage()
+                        // HelpPage()
+                         ));
               },
             ),
             new Container(

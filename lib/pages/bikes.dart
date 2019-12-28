@@ -1,4 +1,5 @@
 import 'package:ecodrive/pages/complaint_box.dart';
+import 'package:ecodrive/pages/help.dart';
 import 'package:ecodrive/pages/loyality_page.dart';
 import 'package:ecodrive/pages/repair_page.dart';
 import 'package:ecodrive/pages/verify_profile.dart';
@@ -98,7 +99,7 @@ class _BikesPageState extends State<BikesPage> {
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
+                        builder: (BuildContext context) => HelpPage()));
               },
             ),
             new Container(
@@ -126,10 +127,51 @@ class _BikesPageState extends State<BikesPage> {
           Card(
             semanticContainer: true,
             clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: Image.network(
-              'http://pluspng.com/img-png/bicycle-hd-png-bicycle-bike-downhill-stumpjumper-960.png',
-              fit: BoxFit.contain,
+            child: Column(
+              children: <Widget>[
+                ecobikeImgae(),
+                SizedBox(
+                  height: 10.0,
+                ),
+               
+                Text('Eco Bike', style: TextStyle(fontSize: 24.0)),
+                SizedBox(
+                  height: 10.0,
+                ),
+                //  Padding(
+                //    padding: const EdgeInsets.all(16.0),
+                //    child: Row(
+                     
+                //      mainAxisAlignment: MainAxisAlignment.start,
+                //     children: <Widget>[
+                //       Expanded(child: Text('Range :')), 
+                //       Expanded(child: Text('120km on single charge '))
+                //     ],
+                // ),
+                //  ),
+                //  Row(
+                //    mainAxisAlignment: MainAxisAlignment.start,
+                //   children: <Widget>[
+                //     Text('Speed :'), 
+                //     Text('45 Kmph')
+                //   ],
+                // ), Row(
+                //    mainAxisAlignment: MainAxisAlignment.start,
+                //   children: <Widget>[
+                //     Text('Charging Time:'), 
+                //     Text('4 hours')
+                //   ],
+                // ),
+                Text('Range :  120km on single charge \nSpeed :  45kmph \nCharging time :  4hours', style: TextStyle(fontSize: 16.0)),
+                // Text('Eco Bike', style: TextStyle(fontSize: 24.0)),
+                // Text('Eco Bike', style: TextStyle(fontSize: 24.0)),
+              ],
             ),
+
+            // Image.asset(
+
+            //   fit: BoxFit.contain,
+            // ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),
             ),
@@ -157,5 +199,9 @@ class _BikesPageState extends State<BikesPage> {
         ),
       ),
     );
+  }
+
+  Widget ecobikeImgae() {
+    return Image(image: AssetImage('assets/ecobike.png'), fit: BoxFit.contain);
   }
 }
