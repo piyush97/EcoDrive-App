@@ -176,13 +176,11 @@ class _BikesPageState extends State<BikesPage> {
           onPressed: () {
             // Add your onPressed code here!
             Navigator.push(
-                context,
-                MaterialPageRoute<Null>(
-                  builder: (BuildContext context) {
-                    return Selectdate();
-                  },
-                  fullscreenDialog: true,
-                ));
+              context,
+              MaterialPageRoute(
+                builder: (context) => Book(),
+              ),
+            );
           },
           child: Text(
             "RENT",
