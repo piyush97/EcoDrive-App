@@ -151,7 +151,7 @@ class _BikesPageState extends State<BikesPage> {
                 //   ],
                 // ),
                 Text(
-                    'Range :  120km on single charge \nSpeed :  45kmph \nCharging time :  4hours',
+                    'Range :  120km on single charge \n\nSpeed :  45kmph \n\nCharging time :  4hours\n',
                     style: TextStyle(fontSize: 16.0)),
                 // Text('Eco Bike', style: TextStyle(fontSize: 24.0)),
                 // Text('Eco Bike', style: TextStyle(fontSize: 24.0)),
