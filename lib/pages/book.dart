@@ -1,4 +1,5 @@
 import 'package:ecodrive/pages/rentLater.dart';
+import 'package:ecodrive/pages/rentNow.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -18,7 +19,14 @@ class Book extends StatelessWidget {
       body: Center(
         child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BookNow(),
+                ),
+              );
+            },
             child: const Text('Book Now', style: TextStyle(fontSize: 20)),
           ),
           const SizedBox(height: 15),
