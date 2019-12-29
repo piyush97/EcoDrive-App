@@ -1,13 +1,7 @@
-import 'package:ecodrive/pages/complaint_box.dart';
-import 'package:ecodrive/pages/help.dart';
-import 'package:ecodrive/pages/loyality_page.dart';
-import 'package:ecodrive/pages/repair_page.dart';
-import 'package:ecodrive/pages/verify_profile.dart';
 import 'package:flutter/material.dart';
-import "../pages/plans.dart";
-import "../pages/rides.dart";
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ecodrive/pages/book.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BikesPage extends StatefulWidget {
   @override
@@ -37,70 +31,64 @@ class _BikesPageState extends State<BikesPage> {
                 backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),
               ),
             ),
-            ListTile(
-              title: new Text('Your Rides'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new Rides()));
-              },
-            ),
-            ListTile(
-              title: new Text('Verify your Profile'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            new VerifyProfile()));
-              },
-            ),
-            ListTile(
-              title: new Text('Loyalty Programme'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new LoyalityPage()));
-              },
-            ),
-            ListTile(
-              title: new Text('Complaint Box'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            new ComplaintPage()));
-              },
-            ),
-            ListTile(
-              title: new Text('Repair'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => new RepairPage()));
-              },
-            ),
+            // ListTile(
+            //   title: new Text('Your Rides'),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //     Navigator.push(
+            //         context,
+            //         new MaterialPageRoute(
+            //             builder: (BuildContext context) => new Rides()));
+            //   },
+            // ),
+            // ListTile(
+            //   title: new Text('Verify your Profile'),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //     Navigator.push(
+            //         context,
+            //         new MaterialPageRoute(
+            //             builder: (BuildContext context) =>
+            //                 new VerifyProfile()));
+            //   },
+            // ),
+            // ListTile(
+            //   title: new Text('Loyalty Programme'),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //     Navigator.push(
+            //         context,
+            //         new MaterialPageRoute(
+            //             builder: (BuildContext context) => new LoyalityPage()));
+            //   },
+            // ),
+            // ListTile(
+            //   title: new Text('Complaint Box'),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //     Navigator.push(
+            //         context,
+            //         new MaterialPageRoute(
+            //             builder: (BuildContext context) =>
+            //                 new ComplaintPage()));
+            //   },
+            // ),
+            // ListTile(
+            //   title: new Text('Repair'),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //     Navigator.push(
+            //         context,
+            //         new MaterialPageRoute(
+            //             builder: (BuildContext context) => new RepairPage()));
+            //   },
+            // ),
             ListTile(
               title: new Text(
-                'Help?',
+                'Need Help',
                 style: TextStyle(color: Colors.pink.withOpacity(1.0)),
               ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(
-                        builder: (BuildContext context) => HelpPage()));
-              },
+              onTap: () => launch("tel://8867208322"),
             ),
             new Container(
               height: 1,
