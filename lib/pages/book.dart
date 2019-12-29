@@ -1,3 +1,4 @@
+import 'package:ecodrive/pages/rentLater.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -23,9 +24,18 @@ class Book extends StatelessWidget {
           const SizedBox(height: 15),
           RaisedButton(
             color: Colors.green,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute<Null>(
+                    builder: (BuildContext context) {
+                      return Selectdate();
+                    },
+                    fullscreenDialog: true,
+                  ));
+            },
             child: const Text(
-              'Book Later',
+              'PreBook',
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
           ),

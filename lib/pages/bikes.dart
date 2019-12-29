@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ecodrive/pages/book.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BikesPage extends StatefulWidget {
   @override
@@ -88,7 +88,10 @@ class _BikesPageState extends State<BikesPage> {
                 'Need Help',
                 style: TextStyle(color: Colors.pink.withOpacity(1.0)),
               ),
-              onTap: () => launch("tel://+918867208322"),
+              onTap: () => AlertDialog(
+                title: Text("For help"),
+                content: Text("tel://+918867208322"),
+              ),
             ),
             new Container(
               height: 1,
