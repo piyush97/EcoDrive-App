@@ -184,7 +184,11 @@ class _BikesPageState extends State<BikesPage> {
                   fullscreenDialog: true,
                 ));
           },
-          child: Text("Rent"),
+          child: Text(
+            "RENT",
+            style:
+                TextStyle(color: Colors.white, fontWeight: FontWeight.normal),
+          ),
           backgroundColor: Colors.green,
         ),
       ),
