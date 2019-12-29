@@ -2,6 +2,7 @@ import 'package:ecodrive/pages/plans.dart';
 import 'package:flutter/material.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 import 'package:intl/intl.dart';
+import 'dart:math';
 
 class Selectdate extends StatefulWidget {
   @override
@@ -21,6 +22,7 @@ class _SelectdateState extends State<Selectdate> {
   bool isCouponCodeApplied = false;
 
   int noOfDays = 0;
+  int noOfMonths = 0;
   double discount = 0;
 
   bool IsAvailable() {
@@ -117,18 +119,22 @@ class _SelectdateState extends State<Selectdate> {
                         initialLastDate: (DateTime.now()).add(
                           Duration(days: 7),
                         ),
-                        firstDate: DateTime(1900),
-                        lastDate: DateTime(2100),
+                        firstDate: DateTime(2019),
+                        lastDate: DateTime(2050),
                       );
                       if (picked != null && picked.length == 2) {
                         setState(
                           () {
                             startDate = picked[0];
                             endDate = picked[1];
-                            debugPrint('${startDate.day.toString()}');
-                            debugPrint('${endDate.day.toString()}');
-                            noOfDays = (endDate.day - startDate.day) + 1;
-                            debugPrint('${noOfDays * 5}');
+                            debugPrint('Month Start${startDate.month}');
+                            debugPrint('Date start${startDate.day}');
+                            debugPrint('Date end${endDate.day}');
+                            debugPrint('Month end${endDate.month}');
+                            noOfMonths =
+                                (endDate.month - startDate.month).abs();
+                            noOfDays = (endDate.day - startDate.day).abs();
+                            debugPrint('${noOfDays}');
                           },
                         );
                       }
@@ -216,6 +222,12 @@ class _SelectdateState extends State<Selectdate> {
                                   top: 18.0, left: 8.0, right: 8.0),
                               child: Text('Booking Details',
                                   style: TextStyle(fontSize: 18.0)),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 4.0, left: 8.0, right: 8.0),
+                              child: Text('No of Months: $noOfMonths',
+                                  style: TextStyle(fontSize: 14.0)),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
@@ -477,13 +489,13 @@ class _SelectdateState extends State<Selectdate> {
   double getApplicableDiscount() {
     String enteredCoupon = couponController.text;
     // if (enteredCoupon == 'ECO15') {
-      if (noOfDays >= 15 && noOfDays < 30) {
-        // if (couponController.text=='ECO14') {
-        return discount = noOfDays * basePrice * 0.15;
-      }
-      // debugPrint(couponController.text);
+    if (noOfDays >= 15 && noOfDays < 30) {
+      // if (couponController.text=='ECO14') {
+      return discount = noOfDays * basePrice * 0.15;
+    }
+    // debugPrint(couponController.text);
     // }
-     else {
+    else {
       final snackBar =
           SnackBar(content: Text("Only ECO15 is valid for 15 days."));
 
