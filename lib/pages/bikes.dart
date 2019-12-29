@@ -133,18 +133,18 @@ class _BikesPageState extends State<BikesPage> {
                 SizedBox(
                   height: 10.0,
                 ),
-               
-                Text('Eco Bike', style: TextStyle(fontSize: 24.0)),
+
+                Text('E Drives', style: TextStyle(fontSize: 24.0)),
                 SizedBox(
                   height: 10.0,
                 ),
                 //  Padding(
                 //    padding: const EdgeInsets.all(16.0),
                 //    child: Row(
-                     
+
                 //      mainAxisAlignment: MainAxisAlignment.start,
                 //     children: <Widget>[
-                //       Expanded(child: Text('Range :')), 
+                //       Expanded(child: Text('Range :')),
                 //       Expanded(child: Text('120km on single charge '))
                 //     ],
                 // ),
@@ -152,17 +152,19 @@ class _BikesPageState extends State<BikesPage> {
                 //  Row(
                 //    mainAxisAlignment: MainAxisAlignment.start,
                 //   children: <Widget>[
-                //     Text('Speed :'), 
+                //     Text('Speed :'),
                 //     Text('45 Kmph')
                 //   ],
                 // ), Row(
                 //    mainAxisAlignment: MainAxisAlignment.start,
                 //   children: <Widget>[
-                //     Text('Charging Time:'), 
+                //     Text('Charging Time:'),
                 //     Text('4 hours')
                 //   ],
                 // ),
-                Text('Range :  120km on single charge \nSpeed :  45kmph \nCharging time :  4hours', style: TextStyle(fontSize: 16.0)),
+                Text(
+                    'Range :  120km on single charge \nSpeed :  45kmph \nCharging time :  4hours',
+                    style: TextStyle(fontSize: 16.0)),
                 // Text('Eco Bike', style: TextStyle(fontSize: 24.0)),
                 // Text('Eco Bike', style: TextStyle(fontSize: 24.0)),
               ],
