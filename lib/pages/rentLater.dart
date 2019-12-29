@@ -26,6 +26,8 @@ class _SelectdateState extends State<Selectdate> {
 
   int noOfDays = 0;
   int noOfMonths = 0;
+  int tot = 0;
+
   double discount = 0;
 
   bool IsAvailable() {
@@ -188,6 +190,7 @@ class _SelectdateState extends State<Selectdate> {
                             noOfMonths =
                                 (endDate.month - startDate.month).abs();
                             noOfDays = (endDate.day - startDate.day).abs();
+                            tot = noOfDays.abs() * basePrice;
                             debugPrint('${noOfDays}');
                           },
                         );
@@ -346,6 +349,8 @@ class _SelectdateState extends State<Selectdate> {
                                   // initiateSearch(val);
                                 },
                                 controller: couponController,
+                                textCapitalization:
+                                    TextCapitalization.characters,
                                 // keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
                                     labelText: "Enter coupon code",
