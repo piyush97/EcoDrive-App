@@ -88,7 +88,7 @@ class _BikesPageState extends State<BikesPage> {
                 'Need Help',
                 style: TextStyle(color: Colors.pink.withOpacity(1.0)),
               ),
-              onTap: () => launch("tel://8867208322"),
+              onTap: () => launch("tel://+918867208322"),
             ),
             new Container(
               height: 1,
