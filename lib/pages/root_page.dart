@@ -94,11 +94,11 @@ class _RootPageState extends State<RootPage> {
           _userId = user?.uid;
           guser = user;
           //isuserdata_present(_userId);
-          checkdoc = widget.auth.checkdoc;
+          this.checkdoc = widget.auth.checkdoc;
         }
         if (user?.uid == null) {
           authStatus = AuthStatus.NOT_LOGGED_IN;
-        } else if (user.uid != null && user.uid.length > 0 && checkdoc) {
+        } else if (user.uid != null && user.uid.length > 0 && this.checkdoc) {
           authStatus = AuthStatus.LOGGED_IN;
         } else {
           authStatus = AuthStatus.NO_DATA;
@@ -192,7 +192,7 @@ class _RootPageState extends State<RootPage> {
   void _onLoggedIn() {
     print(authStatus);
     widget.auth.getCurrentUser().then((user) {
-      if(user==null){
+      if (user == null) {
         return;
       }
       setState(() {
@@ -276,11 +276,14 @@ class _RootPageState extends State<RootPage> {
         return _buildWaitingScreen();
         break;
       case AuthStatus.NOT_LOGGED_IN:
-       /* return new LoginSignUpPage(
+        /* return new LoginSignUpPage(
           auth: widget.auth,
           onSignedIn: _onLoggedIn,
         );*/
-       return new Loginui(auth: widget.auth,onSignedIn: _onLoggedIn,);
+        return new Loginui(
+          auth: widget.auth,
+          onSignedIn: _onLoggedIn,
+        );
         break;
       case AuthStatus.NO_DATA:
         return new Adddetails(
@@ -289,23 +292,23 @@ class _RootPageState extends State<RootPage> {
           first: true,
         );
       case AuthStatus.LOGGED_IN:
-       // if (_userId.length > 0 && _userId != null) {
+        // if (_userId.length > 0 && _userId != null) {
         //  isuserdata_present(_userId).then((bval) {
-         //   print(checkdoc);
-          //});
-          //print(checkdoc.toString() + ": after");
-       // Navigator.of(context).pop();
+        //   print(checkdoc);
+        //});
+        //print(checkdoc.toString() + ": after");
+        // Navigator.of(context).pop();
         return new BikesPage();
-         // Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> BikesPage()));
+        // Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> BikesPage()));
 
-          // Navigator.of(context).pop();
-         // return new MyHomePage(
-          //  userId: _userId,
-           // auth: widget.auth,
-            //onSignedOut: _onSignedOut,
-          //);
-       // } else
-          //return _buildWaitingScreen();
+        // Navigator.of(context).pop();
+        // return new MyHomePage(
+        //  userId: _userId,
+        // auth: widget.auth,
+        //onSignedOut: _onSignedOut,
+        //);
+        // } else
+        //return _buildWaitingScreen();
         break;
       default:
         return _buildWaitingScreen();

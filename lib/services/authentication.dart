@@ -5,21 +5,15 @@ import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class BaseAuth {
-
-
   Future<FirebaseUser> getCurrentUser();
 
   bool checkdoc = false;
   Future<bool> verifyPhone(String phone);
   Future<String> signIn(String smsOTP);
 
-
-
-
   Future<void> signOut();
 
   String verificationId;
-
 
   // Future<void> sendCodeToPhoneNumber(String number);
   //Future<String> testSignInWithPhoneNumber(String smsCode);
@@ -37,7 +31,6 @@ class Auth implements BaseAuth {
     final PhoneCodeSent smsOTPSent = (String verId, [int forceCodeResend]) {
       verificationId = verId;
       return true;
-
     };
     try {
       await _auth.verifyPhoneNumber(
@@ -48,7 +41,7 @@ class Auth implements BaseAuth {
             verificationId = verId;
           },
           codeSent:
-          smsOTPSent, // WHEN CODE SENT THEN WE OPEN DIALOG TO ENTER OTP.
+              smsOTPSent, // WHEN CODE SENT THEN WE OPEN DIALOG TO ENTER OTP.
           timeout: const Duration(seconds: 20),
           verificationCompleted: (AuthCredential phoneAuthCredential) {
             print(phoneAuthCredential);
@@ -68,7 +61,7 @@ class Auth implements BaseAuth {
         smsCode: smsOTP,
       );
       final FirebaseUser user =
-      (await _auth.signInWithCredential(credential)) as FirebaseUser;
+          (await _auth.signInWithCredential(credential)) as FirebaseUser;
       final FirebaseUser currentUser = await _auth.currentUser();
       assert(user.uid == currentUser.uid);
       return user.uid;
@@ -77,16 +70,13 @@ class Auth implements BaseAuth {
     }
   }
 
-
-
-
   Future<bool> isuserdata_present(String uid) async {
     bool check = false;
 
     DocumentReference myref =
         Firestore.instance.collection("users").document(uid);
     await myref.get().then((Doc) {
-      checkdoc = check = Doc.exists;
+      this.checkdoc = check = Doc.exists;
       print("check:" + check.toString());
       return check;
     });
@@ -102,15 +92,9 @@ class Auth implements BaseAuth {
   }
 
   Future<void> signOut() async {
-
-      return _auth.signOut();
-
+    return _auth.signOut();
   }
 
   @override
   bool checkdoc;
-
-
-
-
 }
