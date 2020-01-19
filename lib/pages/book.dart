@@ -51,7 +51,7 @@ class _BookState extends State<Book> {
             // },
             onPressed: openCheckout2500,
             child: const Text(
-              'PreBook',
+              'PreBook your ride!',
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
           ),
