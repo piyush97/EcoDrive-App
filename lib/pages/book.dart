@@ -24,38 +24,75 @@ class _BookState extends State<Book> {
         backgroundColor: Colors.green,
       ),
       body: Center(
-        child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          // RaisedButton(
-          //   onPressed: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => BookNow(),
-          //       ),
-          //     );
-          //   },
-          //   child: const Text('Book Now', style: TextStyle(fontSize: 20)),
-          // ),
-          const SizedBox(height: 15),
-          RaisedButton(
-            color: Colors.green,
-            // onPressed: () {
-            //   Navigator.push(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            // RaisedButton(
+            //   onPressed: () {
+            //     Navigator.push(
             //       context,
-            //       MaterialPageRoute<Null>(
-            //         builder: (BuildContext context) {
-            //           return Selectdate();
-            //         },
-            //         fullscreenDialog: true,
-            //       ));
-            // },
-            onPressed: openCheckout2500,
-            child: const Text(
-              'PreBook your ride!',
-              style: TextStyle(fontSize: 20, color: Colors.white),
+            //       MaterialPageRoute(
+            //         builder: (context) => BookNow(),
+            //       ),
+            //     );
+            //   },
+            //   child: const Text('Book Now', style: TextStyle(fontSize: 20)),
+            // ),
+            const SizedBox(height: 15),
+            RaisedButton(
+              color: Colors.green,
+              // onPressed: () {
+              //   Navigator.push(
+              //       context,
+              //       MaterialPageRoute<Null>(
+              //         builder: (BuildContext context) {
+              //           return Selectdate();
+              //         },
+              //         fullscreenDialog: true,
+              //       ));
+              // },
+              onPressed: openCheckout2500,
+              child: const Text(
+                'PreBook your ride!',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
             ),
-          ),
-        ]),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Pay Rs 100 only!\nOffer valid for first 30 consumers.",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: "Roboto"),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Text(
+                "Note:\n1. Vehicle will be handed over to the consumer by 20th Feb, 2020.",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: "Roboto"),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 24.0),
+              child: Text(
+                "2. For the people who have done prebooking, they will get the vehicle at an exclusive price of Rs 3999 for the first month.",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: "Roboto"),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -71,7 +108,7 @@ class _BookState extends State<Book> {
   void openCheckout2500() async {
     var options = {
       'key': 'rzp_test_1DP5mmOlF5G5ag',
-      'amount': 50000.0,
+      'amount': 10000.0, //Rs 100
       'name': 'Eco Drive',
       'description': 'Eco Drive Payment',
       'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
