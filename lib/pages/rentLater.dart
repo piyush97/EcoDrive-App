@@ -108,7 +108,7 @@ class _SelectdateState extends State<Selectdate> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(
-          'Book your ride',
+          'Eco Drive',
         ),
         backgroundColor: Colors.green,
       ),

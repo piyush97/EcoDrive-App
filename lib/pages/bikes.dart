@@ -15,7 +15,7 @@ class _BikesPageState extends State<BikesPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Book your Ecodrive!",
+          "Ecodrive",
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.green,
@@ -25,8 +25,8 @@ class _BikesPageState extends State<BikesPage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: new Text('Piyush Mehta'),
-              accountEmail: new Text('testemail@test.com'),
+              //accountName: new Text('Piyush Mehta'),
+              //accountEmail: new Text('testemail@test.com'),
               currentAccountPicture: new CircleAvatar(
                 backgroundImage: new NetworkImage('http://i.pravatar.cc/300'),
               ),
