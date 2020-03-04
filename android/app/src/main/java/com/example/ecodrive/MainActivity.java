@@ -9,5 +9,8 @@ public class MainActivity extends FlutterActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     GeneratedPluginRegistrant.registerWith(this);
+    
+    Intent mainintent = new Intent(MainactivitY.this, Mainactivity.class);
+    startactivity.Intent(mainintent)
   }
 }
